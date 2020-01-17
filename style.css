@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-image: url(img/background.jpg);
+}
+
+button {
+    padding: 10px 40px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: rgb(219, 45, 45);
+    border: solid 3px rgb(253, 253, 253);
+    border-radius: 20px;
+    font-size: 30px;
+    color: white;
+    transition: 0.3s;
+
+}
+
+button:hover {
+    background-color: rgb(255, 205, 78)
+}
+
+i {
+    font-size: 5vw;
+    animation: drawAnimation 0.3s linear;
+    color: rgb(254, 255, 253);
+
+}
+
+div {
+    display: inline-block;
+    overflow: hidden;
+    min-width: 120px;
+
+}
+
+div div:nth-child(1) {
+
+    background-image: linear-gradient(rgb(16, 241, 8), rgb(25, 104, 1));
+    padding: 10px;
+
+
+}
+
+div div:nth-child(2) {
+    background-image: linear-gradient(rgb(255, 36, 109), rgb(192, 0, 0));
+    padding: 10px;
+
+}
+
+div div:nth-child(3) {
+    background-image: linear-gradient(rgb(0, 190, 248), rgb(91, 0, 165));
+    padding: 10px;
+
+}
+
+
+
+
+
+
+
+div div:nth-child(1) i {
+    color: rgb(255, 249, 249)
+}
+
+div div:nth-child(2) i {
+    color: rgb(255, 255, 255)
+}
+
+div div:nth-child(3) i {
+    color: rgb(255, 255, 255);
+}
+
+div.wrapper {
+    position: absolute;
+    min-width: 25vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    background-image: linear-gradient(70deg, rgb(61, 61, 61), black);
+    border: solid 0.5vw rgb(255, 205, 78);
+    border-radius: 20px;
+    padding: 30px;
+    z-index: 2;
+
+}
+
+div.wrapper.displayTwo i {
+    animation: drawTwoAnimation 0.5s linear;
+}
+
+section {
+
+    height: 20vh;
+    width: 25vw;
+
+    background-image: linear-gradient(90deg, rgb(61, 61, 61), black);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    border: solid 2px rgb(255, 205, 78);
+    border-radius: 20px 20px 20px 20px;
+    /* background-image: url(img/background2.jpg); */
+    background-position: center;
+    background-size: cover;
+
+    animation: startAnimationOne 1s linear;
+
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    color: gray;
+}
+
+@keyframes startAnimationOne {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes displayAnimation {
+    0% {
+        display: block;
+        transform: scale(1.1);
+    }
+
+    90% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes drawAnimation {
+    0% {
+        transform: translate(0, 100%);
+    }
+
+    100% {
+        transform: translate(0, -100%)
+    }
+}
+
+
+@keyframes drawTwoAnimation {
+    0% {
+        transform: translate(0, 50%);
+    }
+
+    100% {
+        transform: translate(0, -10%)
+    }
+}
+
+p.score {
+    padding: 10px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: 'Monoton', cursive;
+    color: gold;
+    animation: displayAnimation 4s linear forwards;
+    text-align: center;
+
+}
+
+
+
+aside {
+
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+aside p {
+    color: rgb(255, 205, 78);
+    font-size: 20px;
+
+
+    background-image: linear-gradient(90deg, rgba(61, 61, 61, 0.507), rgba(0, 0, 0, 0.815));
+    padding: 10px;
+
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+}
+
+@media(max-width: 1024px) and (min-height:1000px) {
+    section {
+        width: 90%;
+        top: 26%;
+    }
+
+    div.wrapper {
+        width: 90%;
+        top: 30%
+    }
+
+    p.score {
+        font-size: 70px;
+        padding: 60px;
+    }
+
+    i {
+        font-size: 90px;
+    }
+}
+
+
+@media(max-width: 800px) {
+    section {
+        width: 90%;
+        top: 26%;
+    }
+
+    div.wrapper {
+        width: 90%;
+        top: 30%
+    }
+
+    div {
+        min-width: 70px;
+    }
+
+    p.score {
+        font-size: 25px;
+    }
+
+    i {
+        font-size: 40px;
+    }
+}
+
+
+@media(max-height:600px) {
+
+    body section {
+        width: 90%;
+        top: 25%;
+    }
+
+    div.wrapper {
+        width: 90%;
+        top: 44%
+    }
+
+    p.score {
+        font-size: 25px;
+    }
+
+    i {
+        font-size: 40px;
+    }
+}
+
+@media(max-width: 360px) {
+    section {
+        width: 90%;
+        top: 26%;
+    }
+
+    div.wrapper {
+        width: 90%;
+        top: 30%
+    }
+
+    div {
+        min-width: 70px;
+    }
+
+    p.score {
+        font-size: 25px;
+    }
+
+    i {
+        font-size: 40px;
+    }
+}
+
+@media (max-height:770px) and (min-width: 700px) {
+    aside {
+        bottom: 6vh;
+        left: 15%;
+
+
+    }
+
+    /* aside p {
+        font-size: 20px;
+    } */
+
+}
+
+@media (max-height:412px) {
+    aside {
+        bottom: 0;
+        left: 15%;
+
+
+    }
+
+    aside p {
+        font-size: 12px;
+    }
+}
